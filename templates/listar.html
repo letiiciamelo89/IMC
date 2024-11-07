@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico de IMC</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Histórico de IMC</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Peso</th>
+                    <th>Altura</th>
+                    <th>IMC</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pessoa in pessoas %}
+                <tr>
+                    <td>{{ pessoa[0] }}</td>
+                    <td>{{ pessoa[1] }}</td>
+                    <td>{{ pessoa[2] }}</td>
+                    <td>{{ pessoa[3] }}</td>
+                    <td>{{ pessoa[4] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="/">Voltar</a>
+    </div>
+</body>
+</html>
