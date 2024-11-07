@@ -1,63 +1,205 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+/* Resetando margens e padding para garantir consistência */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-.container {
-    width: 80%;
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
+/* Corpo da página */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #ff7e5f, #feb47b); /* Gradiente suave */
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
 }
 
-form input {
+/* Container principal */
+.container {
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo branco com leve transparência */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    max-width: 400px;
 }
 
-form button {
-    width: 100%;
-    padding: 10px;
-    background-color: #4CAF50;
+/* Título */
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Estilo dos campos de entrada */
+input[type="text"],
+input[type="number"] {
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+/* Foco nos campos de entrada */
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #ff7e5f; /* Cor do foco */
+}
+
+/* Botão de submit */
+button {
+    padding: 12px;
+    font-size: 1rem;
     color: white;
+    background-color: #ff7e5f;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-form button:hover {
-    background-color: #45a049;
+/* Efeito hover do botão */
+button:hover {
+    background-color: #feb47b;
 }
 
+/* Link para histórico */
+a {
+    margin-top: 20px;
+    color: #ff7e5f;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #feb47b;
+}
+
+/* Tabela de histórico */
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
-table, th, td {
-    border: 1px solid #ccc;
-    padding: 10px;
-    text-align: center;
+th, td {
+    padding: 12px;
+    text-align: left;
+    font-size: 1rem;
+    color: #333;
 }
 
 th {
-    background-color: #f2f2f2;
+    background-color: #ff7e5f;
+    color: white;
+    font-weight: bold;
 }
 
-a {
-    display: block;
-    text-align: center;
+tr:nth-child(even) {
+    background-color: #f4f4f9;
+}
+
+tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+/* Estilo dos links na página de histórico */
+table a {
+    color: #ff7e5f;
+    text-decoration: none;
+}
+
+table a:hover {
+    color: #feb47b;
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 80%;
+        max-width: 500px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    button, input {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    button, input {
+        font-size: 0.8rem;
+    }
+}
+
+/* Página de Resultado - Modificações */
+.resultado-container {
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escuro para destacar o conteúdo */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    color: #fff; /* Texto branco */
+}
+
+.resultado-container h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.resultado-container p {
+    font-size: 1.2rem;
+    color: #fff; /* Cor do texto */
+    margin: 10px 0;
+}
+
+/* Botão para voltar na página de resultado */
+.resultado-container a {
+    display: inline-block;
     margin-top: 20px;
+    padding: 12px 20px;
+    background-color: #ff7e5f;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+}
+
+.resultado-container a:hover {
+    background-color: #feb47b;
 }
